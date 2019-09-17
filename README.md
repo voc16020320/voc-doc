@@ -1,8 +1,8 @@
 # 第三方APP授权文档
 
-* #####联系官方申请第三方APP，申请人需提供VID、APP英文名、获得授权url（例如 http://www.xxx.com ，以下简称cb_url），申请成功后获得API加密秘钥（以下简称apiSecret）。
+* ##### 联系官方申请第三方APP，申请人需提供VID、APP英文名、获得授权url（例如 http://www.xxx.com ，以下简称cb_url），申请成功后获得API加密秘钥（以下简称apiSecret）。
 
-* #####用户在VOC客户端（以下简称客户端）授权过后请求cb_url，GET方法，参数为token，例如: http://www.xxx.com?id=foolbar ，此id为该用户对应的身份特征码。
+* ##### 用户在VOC客户端（以下简称客户端）授权过后请求cb_url，GET方法，参数为id，例如: http://www.xxx.com?id=foolbar ，此id为该用户对应的身份特征码。
 
 * ##### APP需在收到id特征码后一小时内完成授权绑定，请求接口为: http://app.vocx.io/auth/access ，POST方法，参数如下：
 
@@ -94,5 +94,18 @@ POST数据不变，仍为 `{bbb:11,aaa:22}`。
 参数名  | 类型 | 示例或说明
 ------------- | ------------- | -------------
  balance | string  | 带符号字符串，例如 "23" 或者 "-6"
+
+  * ##### 拉取用户基本信息
+ action: `/api/user_info`
+ 
+ method： `POST`
+ 
+ 无参数
+ 
+ 返回示例：
+ 
+参数名  | 类型 | 示例或说明
+------------- | ------------- | -------------
+ vid | string  | "100001"
  
 ### END
